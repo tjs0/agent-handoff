@@ -1,0 +1,12 @@
+{
+  "name": "agent-handoff",
+  "interface": { "displayName": "Agent Handoff" },
+  "plugins": [
+    {
+      "name": "agent-handoff",
+      "source": { "source": "url", "url": "./" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Developer Tools"
+    }
+  ]
+}
