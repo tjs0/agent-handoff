@@ -23,8 +23,10 @@ for d in skills/*/; do
   n="$(basename "$d")"
   [ "$(sed -n 's/^name: //p' "$d/SKILL.md" | head -1)" = "$n" ] || err "$d: frontmatter name is not $n"
   grep -q '^description: Use only when the user invokes' "$d/SKILL.md" \
-    || err "$d: description must say it is user-invoked (Codex shows it to the model)"
+    || err "$d: description must say it is user-invoked"
   grep -q '^disable-model-invocation: true' "$d/SKILL.md" || err "$d: missing disable-model-invocation"
+  [ "$(cat "$d/agents/openai.yaml" 2>/dev/null)" = "$(printf 'policy:\n  allow_implicit_invocation: false')" ] \
+    || err "$d: agents/openai.yaml must set policy.allow_implicit_invocation: false"
 done
 
 if grep -rnP '\x{2014}|\x{2013}' --exclude-dir=.git . >&2; then err "em or en dash found"; fi

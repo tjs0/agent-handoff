@@ -1,11 +1,21 @@
 {
   "name": "agent-handoff",
   "displayName": "Agent Handoff",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Save a handoff before you shut down and resume it in any coding agent, plus an AFK mode that works without asking for input.",
   "category": "Developer Tools",
-  "keywords": ["handoff", "resume", "shutdown", "afk", "autonomous", "session"],
-  "author": { "name": "tjs0", "url": "https://github.com/tjs0" },
+  "keywords": [
+    "handoff",
+    "resume",
+    "shutdown",
+    "afk",
+    "autonomous",
+    "session"
+  ],
+  "author": {
+    "name": "tjs0",
+    "url": "https://github.com/tjs0"
+  },
   "homepage": "https://github.com/tjs0/agent-handoff",
   "repository": "https://github.com/tjs0/agent-handoff",
   "license": "MIT"

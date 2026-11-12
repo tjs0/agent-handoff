@@ -62,11 +62,14 @@ Each skill takes an optional argument, such as a time limit for
 
 - Claude Code: `/agent-handoff:handoff-save`, `/agent-handoff:handoff-resume`,
   `/agent-handoff:afk`.
-- Codex and Antigravity: ask for the skill by name ("use the afk skill").
+- Codex: `$handoff-save`, `$handoff-resume`, `$afk`.
+- Antigravity: ask for the skill by name ("use the afk skill").
 
-The skills never trigger on their own. `disable-model-invocation: true` hides
-them from the model in Claude Code and Antigravity; Codex shows them to the
-model, so each description says to use it only when the user invokes it.
+The skills never trigger on their own. `disable-model-invocation: true` in
+each `SKILL.md` hides them from the model in Claude Code and Antigravity, and
+`policy: allow_implicit_invocation: false` in each `agents/openai.yaml` does
+the same in Codex. Each description also says to use it only when the user
+invokes it.
 
 The handoff records which agent wrote it and, when known, the command to
 resume that session (`claude --resume <id>`, `codex resume <id>`,
