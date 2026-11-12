@@ -63,7 +63,9 @@ Each skill takes an optional argument, such as a time limit for
 - Claude Code: `/agent-handoff:handoff-save`, `/agent-handoff:handoff-resume`,
   `/agent-handoff:afk`.
 - Codex: `$handoff-save`, `$handoff-resume`, `$afk`.
-- Antigravity: ask for the skill by name ("use the afk skill").
+- Antigravity: `/agent-handoff:handoff-save`, `/agent-handoff:handoff-resume`,
+  `/agent-handoff:afk`. Asking for a skill by name does not work: the model
+  cannot see it.
 
 The skills never trigger on their own. `disable-model-invocation: true` in
 each `SKILL.md` hides them from the model in Claude Code and Antigravity, and
